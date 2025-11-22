@@ -1,0 +1,2376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WHE Group - Luxury Property Development</title>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WGGH9Y62K4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-WGGH9Y62K4');
+    </script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --gold: #D4AF37;
+            --gold-light: #F4D03F;
+            --gold-dark: #B8941E;
+            --dark: #0a0a0a;
+            --dark-1: #141414;
+            --dark-2: #1a1a1a;
+            --dark-3: #242424;
+            --navy: #0d1b2a;
+            --navy-light: #1b263b;
+            --white: #ffffff;
+            --gray: #8c8c8c;
+            --gray-light: #b8b8b8;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--dark);
+            color: var(--white);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* PREMIUM SCROLLBAR */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--dark-1);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--gold), var(--gold-dark));
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--gold);
+        }
+
+        /* ANIMATED BACKGROUND */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.02) 0%, transparent 60%);
+            pointer-events: none;
+            z-index: 0;
+            animation: bgPulse 10s ease-in-out infinite;
+        }
+
+        @keyframes bgPulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        /* FLOATING PARTICLES */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(2px 2px at 25% 30%, var(--gold), transparent),
+                radial-gradient(2px 2px at 75% 70%, var(--gold), transparent),
+                radial-gradient(1px 1px at 15% 80%, var(--gold), transparent),
+                radial-gradient(2px 2px at 85% 20%, var(--gold), transparent),
+                radial-gradient(1px 1px at 45% 60%, var(--gold), transparent),
+                radial-gradient(2px 2px at 65% 40%, var(--gold), transparent),
+                radial-gradient(1px 1px at 35% 90%, var(--gold), transparent),
+                radial-gradient(2px 2px at 90% 50%, var(--gold), transparent);
+            background-size: 200% 200%;
+            animation: particles 30s linear infinite;
+            opacity: 0.6;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes particles {
+            0% { background-position: 0% 0%, 100% 100%, 50% 50%, 80% 20%, 20% 80%; }
+            50% { background-position: 100% 100%, 0% 0%, 25% 75%, 20% 80%, 80% 20%; }
+            100% { background-position: 0% 0%, 100% 100%, 50% 50%, 80% 20%, 20% 80%; }
+        }
+
+        /* LOADING SCREEN */
+        .page-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--dark);
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            transition: opacity 1s ease, visibility 1s ease;
+        }
+
+        .page-loader.loaded {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-logo {
+            width: 180px;
+            height: 180px;
+            margin-bottom: 2rem;
+            animation: logoGlow 2s ease-in-out infinite;
+            filter: drop-shadow(0 0 50px rgba(212, 175, 55, 0.8));
+        }
+
+        @keyframes logoGlow {
+            0%, 100% { filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.6)); }
+            50% { filter: drop-shadow(0 0 60px rgba(212, 175, 55, 1)); }
+        }
+
+        .loader-text {
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            color: var(--gold);
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            font-weight: 600;
+            animation: textGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes textGlow {
+            0%, 100% { text-shadow: 0 0 20px rgba(212, 175, 55, 0.6); opacity: 0.7; }
+            50% { text-shadow: 0 0 40px rgba(212, 175, 55, 1); opacity: 1; }
+        }
+
+        /* NAVBAR - MINIMAL LUXURY DESIGN - OPTION C */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.96);
+            backdrop-filter: blur(40px) saturate(180%);
+            z-index: 1000;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 0;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.9);
+        }
+
+        /* Top Gold Border */
+        .navbar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent 5%, var(--gold) 50%, transparent 95%);
+            box-shadow: 0 0 20px var(--gold);
+        }
+
+        /* Bottom Gold Border */
+        .navbar::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 10%, rgba(212, 175, 55, 0.6) 50%, transparent 90%);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+        }
+
+        .navbar.scrolled {
+            background: rgba(0, 0, 0, 0.98);
+            box-shadow: 0 15px 60px rgba(0, 0, 0, 0.95), 0 0 40px rgba(212, 175, 55, 0.15);
+        }
+
+        .navbar.scrolled::before {
+            height: 3px;
+            box-shadow: 0 0 30px var(--gold);
+        }
+
+        .nav-content {
+            max-width: 1800px;
+            margin: 0 auto;
+            padding: 0.5rem 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Logo Section - Left Side */
+        .nav-logo {
+            position: relative;
+            z-index: 2;
+            flex-shrink: 0;
+        }
+
+        /* Subtle glow around logo */
+        .nav-logo::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 150%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.1), transparent 70%);
+            opacity: 0;
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            pointer-events: none;
+        }
+
+        .nav-logo:hover::before {
+            opacity: 1;
+            width: 180%;
+            height: 180%;
+        }
+
+        .nav-logo img {
+            height: 75px;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.5));
+        }
+
+        .nav-logo img:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(0 0 50px rgba(212, 175, 55, 0.8));
+        }
+
+        .navbar.scrolled .nav-logo img {
+            height: 55px;
+        }
+
+        /* Ornamental Divider - Hidden in this design */
+        .nav-ornament {
+            display: none;
+        }
+
+        /* Menu Section - Right Side */
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 0;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-menu li {
+            position: relative;
+            padding: 0 1.2rem;
+        }
+
+        /* Elegant Dot Separators */
+        .nav-menu li:not(:last-child)::after {
+            content: '·';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba(212, 175, 55, 0.5);
+            font-size: 1rem;
+            font-weight: 300;
+            transition: all 0.3s;
+        }
+
+        .nav-menu li:hover::after {
+            color: rgba(212, 175, 55, 0.9);
+            text-shadow: 0 0 15px var(--gold);
+        }
+
+        .nav-menu a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.6rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            padding: 0.3rem 0;
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Minimal underline effect */
+        .nav-menu a::before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+            transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 0 10px var(--gold);
+        }
+
+        /* Top accent line */
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: linear-gradient(90deg, var(--gold-light), var(--gold));
+            transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
+            box-shadow: 0 0 10px var(--gold);
+        }
+
+        .nav-menu a:hover {
+            color: rgba(255, 255, 255, 1);
+            letter-spacing: 4px;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+            transform: translateY(-1px);
+        }
+
+        .nav-menu a:hover::before,
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        /* Subtle background glow on hover */
+        .nav-menu li::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 0%;
+            height: 200%;
+            background: linear-gradient(180deg, transparent, rgba(212, 175, 55, 0.05), transparent);
+            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: -1;
+        }
+
+        .nav-menu li:hover::before {
+            width: 120%;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            height: 100vh;
+            background: 
+                linear-gradient(135deg, rgba(10, 10, 10, 0.9), rgba(13, 27, 42, 0.8)), 
+                url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80') center/cover fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, transparent 0%, rgba(10, 10, 10, 0.5) 100%);
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 1200px;
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-logo {
+            width: 300px;
+            margin: 0 auto -5rem;
+            opacity: 0;
+            animation: fadeInScale 1.2s ease 0.3s forwards;
+            filter: drop-shadow(0 20px 60px rgba(212, 175, 55, 0.6));
+        }
+
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .hero-logo img {
+            width: 100%;
+            animation: gentleFloat 6s ease-in-out infinite;
+        }
+
+        @keyframes gentleFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .hero-title {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(3rem, 7vw, 7rem);
+            font-weight: 800;
+            letter-spacing: 12px;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.6s forwards;
+            background: linear-gradient(135deg, var(--white) 0%, var(--gold) 50%, var(--white) 100%);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 1s ease 0.6s forwards, textShimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes textShimmer {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-subtitle-small {
+            font-size: clamp(1rem, 1.5vw, 1.2rem);
+            color: var(--gray-light);
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            margin-bottom: 3rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.9s forwards;
+            font-weight: 300;
+        }
+
+        .hero-tagline {
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            color: var(--gold);
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease 1.2s forwards;
+            text-shadow: 0 0 30px rgba(212, 175, 55, 0.6);
+        }
+
+        .hero-tagline::before,
+        .hero-tagline::after {
+            content: '◆';
+            margin: 0 30px;
+            font-size: 0.5em;
+            opacity: 0.8;
+        }
+
+        .hero-desc {
+            font-size: clamp(1rem, 1.5vw, 1.2rem);
+            color: var(--gray-light);
+            font-weight: 300;
+            line-height: 2;
+            margin-bottom: 4rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0;
+            animation: fadeInUp 1s ease 1.5s forwards;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            opacity: 0;
+            animation: fadeInUp 1s ease 1.8s forwards;
+        }
+
+        .btn {
+            padding: 20px 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            border-radius: 0;
+            cursor: pointer;
+        }
+
+        .btn-gold {
+            background: var(--gold);
+            color: var(--dark);
+            border: 2px solid var(--gold);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn-gold::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: var(--gold-light);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.5s, height 0.5s;
+        }
+
+        .btn-gold:hover::before {
+            width: 400px;
+            height: 400px;
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(212, 175, 55, 0.6);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--gold);
+            border: 2px solid var(--gold);
+        }
+
+        .btn-outline:hover {
+            background: var(--gold);
+            color: var(--dark);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn span {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* SECTION STYLES */
+        section {
+            padding: 120px 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 6rem;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            color: var(--gold);
+            font-weight: 700;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2.5rem, 5vw, 5rem);
+            color: var(--white);
+            font-weight: 700;
+            margin-bottom: 2rem;
+            letter-spacing: 4px;
+            line-height: 1.2;
+        }
+
+        .section-desc {
+            font-size: 1.1rem;
+            color: var(--gray-light);
+            line-height: 2;
+            font-weight: 300;
+        }
+
+        .ornament {
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 0 auto 2rem;
+            box-shadow: 0 0 20px var(--gold);
+        }
+
+        /* GLASS CARD */
+        .glass-card {
+            background: rgba(26, 26, 26, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5), 0 0 40px rgba(212, 175, 55, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        .glass-card:hover {
+            border-color: rgba(212, 175, 55, 0.5);
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6), 0 0 60px rgba(212, 175, 55, 0.3);
+            transform: translateY(-10px);
+        }
+
+        /* ABOUT SECTION */
+        .about {
+            background: var(--dark-1);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: start;
+        }
+
+        .about-text h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .about-text p {
+            color: var(--gray-light);
+            line-height: 2;
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+        }
+
+        .about-text h4 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            color: var(--gold);
+            margin: 3rem 0 1.5rem;
+            font-weight: 600;
+        }
+
+        .values-grid {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .value-item {
+            display: flex;
+            gap: 1.5rem;
+            align-items: start;
+            padding: 1.5rem;
+            background: rgba(212, 175, 55, 0.05);
+            border-left: 3px solid var(--gold);
+            transition: all 0.3s;
+        }
+
+        .value-item:hover {
+            background: rgba(212, 175, 55, 0.1);
+            transform: translateX(10px);
+        }
+
+        .value-item .icon {
+            color: var(--gold);
+            font-size: 1.5rem;
+            min-width: 30px;
+        }
+
+        .value-item strong {
+            color: var(--white);
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .value-item p {
+            color: var(--gray);
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        /* BOARD OF DIRECTORS */
+        .board-header {
+            text-align: center;
+            padding: 3rem 0 4rem;
+            margin-bottom: 3rem;
+            border-bottom: 2px solid var(--gold);
+            position: relative;
+        }
+
+        .board-header::after {
+            content: '◆';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--gold);
+            font-size: 1.5rem;
+            background: var(--dark-1);
+            padding: 0 20px;
+        }
+
+        .board-header h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 3.5rem;
+            color: var(--white);
+            font-weight: 800;
+            letter-spacing: 6px;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 40px rgba(212, 175, 55, 0.4);
+        }
+
+        .board-header p {
+            color: var(--gold);
+            font-size: 1rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .director-card {
+            background: rgba(26, 26, 26, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 4rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .director-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+            box-shadow: 0 0 20px var(--gold);
+        }
+
+        .director-card:hover {
+            border-color: rgba(212, 175, 55, 0.5);
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6), 0 0 60px rgba(212, 175, 55, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .director-img {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 2.5rem;
+            border: 4px solid var(--gold);
+            box-shadow: 0 20px 50px rgba(212, 175, 55, 0.4), 0 0 40px rgba(212, 175, 55, 0.2);
+            overflow: hidden;
+            transition: all 0.4s;
+        }
+
+        .director-card:hover .director-img {
+            transform: scale(1.05);
+            box-shadow: 0 30px 70px rgba(212, 175, 55, 0.6), 0 0 60px rgba(212, 175, 55, 0.4);
+        }
+
+        .director-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .director-name {
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            color: var(--white);
+            text-align: center;
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+        }
+
+        .director-subtitle {
+            text-align: center;
+            color: var(--gold);
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        .director-position {
+            text-align: center;
+            color: var(--gray-light);
+            margin-bottom: 2.5rem;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .director-award {
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 2rem;
+            margin-top: 2.5rem;
+        }
+
+        .director-award strong {
+            color: var(--gold);
+            display: block;
+            margin-bottom: 1rem;
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+        }
+
+        .director-award p {
+            color: var(--gray-light);
+            line-height: 1.8;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        /* STATS */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: rgba(26, 26, 26, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.4s;
+        }
+
+        .stat-item:hover {
+            border-color: rgba(212, 175, 55, 0.5);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(212, 175, 55, 0.3);
+        }
+
+        .stat-number {
+            font-family: 'Cinzel', serif;
+            font-size: 5rem;
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+            display: block;
+            margin-bottom: 1rem;
+            line-height: 1;
+            filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.4));
+        }
+
+        .stat-text {
+            color: var(--gray-light);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        /* PROJECTS */
+        .projects {
+            background: var(--dark);
+        }
+
+        .project-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            margin-bottom: 4rem;
+            background: var(--dark-1);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            overflow: hidden;
+            transition: all 0.4s;
+        }
+
+        .project-item:hover {
+            border-color: rgba(212, 175, 55, 0.4);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), 0 0 60px rgba(212, 175, 55, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .project-item:nth-child(even) {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .project-item:nth-child(even) .project-image {
+            order: 2;
+        }
+
+        .project-image {
+            height: 500px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(10, 10, 10, 0.5), transparent);
+            transition: all 0.4s;
+        }
+
+        .project-item:hover .project-image::before {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), transparent);
+        }
+
+        .project-label {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            background: var(--gold);
+            color: var(--dark);
+            padding: 12px 30px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            z-index: 10;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+        }
+
+        .project-details {
+            padding: 5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .project-title {
+            font-family: 'Cinzel', serif;
+            font-size: 2.8rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .project-location {
+            color: var(--gold);
+            margin-bottom: 2rem;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .project-intro {
+            color: var(--gray-light);
+            font-style: italic;
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+
+        .project-features {
+            list-style: none;
+            margin-bottom: 3rem;
+        }
+
+        .project-features li {
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            color: var(--gray-light);
+            transition: all 0.3s;
+        }
+
+        .project-features li:hover {
+            padding-left: 15px;
+            color: var(--gold);
+        }
+
+        .project-features li::before {
+            content: '◆';
+            color: var(--gold);
+            margin-right: 15px;
+            font-size: 0.6em;
+        }
+
+        .project-pricing {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+
+        .project-cta {
+            padding: 18px 40px;
+            text-align: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border: 2px solid var(--gold);
+            color: var(--gold);
+            transition: all 0.3s;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .project-cta:hover {
+            background: var(--gold);
+            color: var(--dark);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+        }
+
+        /* SERVICES */
+        .services {
+            background: var(--dark-1);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+        }
+
+        .service-card {
+            text-align: center;
+            background: rgba(26, 26, 26, 0.6);
+            backdrop-filter: blur(20px);
+            padding: 4rem 3rem;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gold);
+            transform: scaleX(0);
+            transition: transform 0.4s;
+            box-shadow: 0 0 20px var(--gold);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            border-color: rgba(212, 175, 55, 0.5);
+            transform: translateY(-15px);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5), 0 0 60px rgba(212, 175, 55, 0.3);
+        }
+
+        .service-icon {
+            font-size: 4rem;
+            margin-bottom: 2.5rem;
+            filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.4));
+            transition: all 0.4s;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.2) rotateY(360deg);
+        }
+
+        .service-name {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .service-desc {
+            color: var(--gray-light);
+            line-height: 1.9;
+        }
+
+        /* CONTACT */
+        .contact {
+            background: var(--dark);
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 6rem;
+        }
+
+        .contact-info h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 4rem;
+            font-weight: 600;
+        }
+
+        .contact-detail {
+            display: flex;
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+            padding: 2.5rem;
+            background: rgba(26, 26, 26, 0.6);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            transition: all 0.3s;
+        }
+
+        .contact-detail:hover {
+            border-color: rgba(212, 175, 55, 0.4);
+            transform: translateX(15px);
+            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.2);
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            min-width: 60px;
+            color: var(--gold);
+        }
+
+        .contact-text h4 {
+            color: var(--gold);
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .contact-text p {
+            color: var(--gray-light);
+            line-height: 1.9;
+        }
+
+        .contact-form-box {
+            background: rgba(26, 26, 26, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 4rem;
+        }
+
+        .contact-form-box h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 3rem;
+            font-weight: 600;
+        }
+
+        .form-row {
+            margin-bottom: 2.5rem;
+        }
+
+        .form-row label {
+            display: block;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+        }
+
+        .form-row input,
+        .form-row textarea {
+            width: 100%;
+            padding: 18px 25px;
+            background: rgba(10, 10, 10, 0.6);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            color: var(--white);
+            font-size: 1rem;
+            font-family: 'Montserrat', sans-serif;
+            transition: all 0.3s;
+        }
+
+        .form-row input:focus,
+        .form-row textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .form-row textarea {
+            min-height: 180px;
+            resize: vertical;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 20px;
+            background: var(--gold);
+            color: var(--dark);
+            border: none;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+        }
+
+        .form-submit:hover {
+            background: var(--gold-light);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.6);
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--dark-1);
+            padding: 5rem 0 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .footer-logo {
+            height: 90px;
+            margin-bottom: 3rem;
+            filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.4));
+        }
+
+        .footer-text {
+            margin-bottom: 3rem;
+            line-height: 2;
+            color: var(--gray-light);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 2.5rem;
+            justify-content: center;
+            margin-bottom: 4rem;
+        }
+
+        .social-links a {
+            font-size: 2rem;
+            transition: all 0.3s;
+            color: var(--gray);
+        }
+
+        .social-links a:hover {
+            transform: scale(1.2) translateY(-5px);
+            color: var(--gold);
+            filter: drop-shadow(0 0 20px var(--gold));
+        }
+
+        .footer-copy {
+            padding-top: 3rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        /* MODAL POPUP */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.95);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background: var(--dark-1);
+            margin: 2% auto;
+            max-width: 1400px;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            position: relative;
+            animation: slideDown 0.4s ease;
+            max-height: 95vh;
+            overflow-y: auto;
+            box-shadow: 0 50px 100px rgba(0, 0, 0, 0.9), 0 0 100px rgba(212, 175, 55, 0.3);
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            right: 30px;
+            top: 30px;
+            font-size: 40px;
+            font-weight: 300;
+            color: var(--gold);
+            cursor: pointer;
+            z-index: 10001;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(212, 175, 55, 0.1);
+            border: 2px solid var(--gold);
+            transition: all 0.3s;
+        }
+
+        .modal-close:hover {
+            transform: rotate(90deg);
+            background: var(--gold);
+            color: var(--dark);
+            box-shadow: 0 0 30px var(--gold);
+        }
+
+        .modal-header {
+            background: rgba(10, 10, 10, 0.9);
+            padding: 4rem 5%;
+            text-align: center;
+            border-bottom: 4px solid var(--gold);
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.3);
+        }
+
+        .modal-header h2 {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            color: var(--gold);
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 0 0 30px rgba(212, 175, 55, 0.6);
+        }
+
+        .modal-header p {
+            color: var(--gray-light);
+            font-size: 1.2rem;
+        }
+
+        .modal-body {
+            padding: 4rem 5%;
+            background: var(--dark-1);
+        }
+
+        .modal-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .modal-gallery img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border: 2px solid rgba(212, 175, 55, 0.2);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            transition: all 0.4s;
+        }
+
+        .modal-gallery img:hover {
+            border-color: rgba(212, 175, 55, 0.6);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7), 0 0 40px rgba(212, 175, 55, 0.3);
+            transform: scale(1.02);
+        }
+
+        .price-section {
+            background: rgba(212, 175, 55, 0.1);
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            padding: 3rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .price-section h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--gold);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 30px rgba(212, 175, 55, 0.6);
+        }
+
+        .price-section p {
+            color: var(--gray-light);
+            font-size: 1.1rem;
+        }
+
+        .house-types {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .house-type-card {
+            background: rgba(26, 26, 26, 0.6);
+            backdrop-filter: blur(20px);
+            padding: 3rem;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            transition: all 0.4s;
+        }
+
+        .house-type-card:hover {
+            border-color: rgba(212, 175, 55, 0.5);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7), 0 0 40px rgba(212, 175, 55, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .house-type-card h4 {
+            font-family: 'Cinzel', serif;
+            color: var(--gold);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .house-type-card .specs {
+            display: grid;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .spec-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .spec-label {
+            color: var(--gray-light);
+            font-weight: 600;
+        }
+
+        .spec-value {
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        .features-section {
+            margin-bottom: 4rem;
+        }
+
+        .features-section h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .feature-item {
+            background: rgba(26, 26, 26, 0.6);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .feature-item:hover {
+            border-color: rgba(212, 175, 55, 0.5);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+        }
+
+        .feature-item .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-item h5 {
+            color: var(--white);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-item p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .specifications {
+            background: rgba(26, 26, 26, 0.6);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .specifications h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 1rem;
+        }
+
+        .spec-category {
+            margin-bottom: 2rem;
+        }
+
+        .spec-category h4 {
+            color: var(--gold);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .spec-category ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .spec-category li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            color: var(--gray-light);
+            line-height: 1.6;
+        }
+
+        .spec-category li::before {
+            content: '✓';
+            color: var(--gold);
+            font-weight: 700;
+            margin-right: 10px;
+        }
+
+        .modal-cta {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            padding: 3rem 0;
+        }
+
+        /* ANIMATIONS */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .about-grid,
+            .contact-wrapper,
+            .project-item {
+                grid-template-columns: 1fr;
+            }
+
+            .project-item:nth-child(even) .project-image {
+                order: 1;
+            }
+
+            .stats,
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                gap: 2rem;
+                font-size: 0.75rem;
+            }
+
+            .stats,
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- PAGE LOADER -->
+    <div class="page-loader">
+        <img src="https://i.imgur.com/znXpPMl.png" alt="WHE Group" class="loader-logo">
+        <div class="loader-text">Loading Excellence</div>
+    </div>
+
+    <!-- NAVBAR - MINIMAL LUXURY -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-content">
+            <!-- Logo Left Side -->
+            <div class="nav-logo">
+                <img src="https://i.imgur.com/znXpPMl.png" alt="WHE Group">
+            </div>
+            
+            <!-- Menu Right Side -->
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-logo">
+                <img src="https://i.imgur.com/znXpPMl.png" alt="WHE Group">
+            </div>
+            <h1 class="hero-title">WHE GROUP</h1>
+            <p class="hero-subtitle-small">Group of Companies</p>
+            <p class="hero-tagline">Transforming Spaces, Inspiring Lives</p>
+            <p class="hero-desc">Leading Property Development Excellence in Sarawak | Crafting Premium Living Spaces with Innovation, Quality, and Trust</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-gold"><span>Explore Projects</span></a>
+                <a href="#contact" class="btn btn-outline"><span>Get In Touch</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Our Story</span>
+                <h2 class="section-title">About WHE Group</h2>
+                <div class="ornament"></div>
+                <p class="section-desc">Building Dreams, Creating Communities Across Sarawak</p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <h3>Excellence in Property Development</h3>
+                    <p>WHE Group stands as a beacon of excellence in Sarawak's property development landscape. With an unwavering commitment to quality, innovation, and customer satisfaction, we have successfully delivered numerous residential and commercial projects that enhance communities and transform lives.</p>
+                    <p>Our approach combines strategic location selection, superior construction quality, contemporary design, and competitive pricing to deliver exceptional value. Every project reflects our dedication to creating spaces where families thrive and businesses flourish.</p>
+                    
+                    <h4>Our Vision</h4>
+                    <p>To be Sarawak's most trusted and innovative property developer, creating sustainable communities that inspire generations and contribute to the region's prosperity and growth.</p>
+                    
+                    <h4>Our Mission</h4>
+                    <p>To deliver exceptional property developments that exceed expectations through quality craftsmanship, strategic innovation, and unwavering commitment to customer satisfaction.</p>
+                    
+                    <h4>Core Values</h4>
+                    <div class="values-grid">
+                        <div class="value-item">
+                            <span class="icon">✦</span>
+                            <div>
+                                <strong>Quality Excellence</strong>
+                                <p>We never compromise on quality, ensuring every project meets the highest standards.</p>
+                            </div>
+                        </div>
+                        <div class="value-item">
+                            <span class="icon">✦</span>
+                            <div>
+                                <strong>Customer Focus</strong>
+                                <p>Our customers are at the heart of everything we do.</p>
+                            </div>
+                        </div>
+                        <div class="value-item">
+                            <span class="icon">✦</span>
+                            <div>
+                                <strong>Innovation</strong>
+                                <p>We embrace modern design and construction methods.</p>
+                            </div>
+                        </div>
+                        <div class="value-item">
+                            <span class="icon">✦</span>
+                            <div>
+                                <strong>Integrity</strong>
+                                <p>Transparency and ethical practices form our foundation.</p>
+                            </div>
+                        </div>
+                        <div class="value-item">
+                            <span class="icon">✦</span>
+                            <div>
+                                <strong>Community Building</strong>
+                                <p>We build thriving communities where people flourish.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal">
+                    <!-- BOARD OF DIRECTORS HEADER -->
+                    <div class="board-header">
+                        <h2>BOARD OF DIRECTORS</h2>
+                        <p>Leadership Excellence</p>
+                    </div>
+
+                    <!-- FOUNDER & CEO -->
+                    <div class="director-card">
+                        <div class="director-img">
+                            <img src="https://i.imgur.com/Mw05aao.jpg" alt="Founder & CEO">
+                        </div>
+                        <h3 class="director-name">Temenggong Dato Sri Haji Wan Hamid Edruce</h3>
+                        <p class="director-subtitle">Bin Tuanku Haji Mohammad</p>
+                        <p class="director-position">Founder & Chief Executive Officer</p>
+                        <div class="director-award">
+                            <strong>ROYAL RECOGNITION</strong>
+                            <p>Awarded Dato Sri by Panglima Negara Bintang Sarawak (P.N.B.S) in 2024 for outstanding contributions to Sarawak's socio-economic development</p>
+                        </div>
+                    </div>
+
+                    <!-- MANAGING DIRECTOR -->
+                    <div class="director-card">
+                        <div class="director-img">
+                            <img src="https://i.imgur.com/s84lMMM.jpg" alt="Managing Director">
+                        </div>
+                        <h3 class="director-name">Councillor Syed Hamzah</h3>
+                        <p class="director-subtitle">Bin Temenggong Dato' Sri Hj Wan Hamid Edruce</p>
+                        <p class="director-position">Managing Director</p>
+                        <div class="director-award">
+                            <strong>LEADERSHIP EXCELLENCE</strong>
+                            <p>Leading WHE Group's strategic vision and operations, driving innovation and growth across all business verticals</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats reveal">
+                <div class="stat-item glass-card">
+                    <span class="stat-number">500+</span>
+                    <span class="stat-text">Happy Homeowners</span>
+                </div>
+                <div class="stat-item glass-card">
+                    <span class="stat-number">10+</span>
+                    <span class="stat-text">Successful Projects</span>
+                </div>
+                <div class="stat-item glass-card">
+                    <span class="stat-number">15+</span>
+                    <span class="stat-text">Years Experience</span>
+                </div>
+                <div class="stat-item glass-card">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-text">Quality Commitment</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Our Portfolio</span>
+                <h2 class="section-title">Premium Developments</h2>
+                <div class="ornament"></div>
+                <p class="section-desc">Discover Your Dream Home in Our Luxury Developments</p>
+            </div>
+
+            <div class="projects-showcase">
+                <!-- KEMUYANG AVENUE PHASE 5 -->
+                <div class="project-item reveal">
+                    <div class="project-image" style="background-image: url('https://i.imgur.com/sz2n4Jl.jpg');">
+                        <div class="project-label">Upcoming Development - Open for Booking</div>
+                    </div>
+                    <div class="project-details">
+                        <h3 class="project-title">Kemuyang Avenue Phase 5</h3>
+                        <p class="project-location">📍 Sibu, Sarawak</p>
+                        <p class="project-intro">Modern homes surrounded by greenery, designed for comfort, style and harmony.</p>
+                        <ul class="project-features">
+                            <li>15 mins to Sibu Airport</li>
+                            <li>13 mins to Sibu General Hospital</li>
+                            <li>20 mins to Star Mega Mall</li>
+                            <li>30 mins to City Centre</li>
+                            <li>Early Bird Special Launch Price</li>
+                            <li>SPA Paid by Developer</li>
+                            <li>Free Loan Eligibility Check</li>
+                            <li>Full Loan Available (T&C Apply)</li>
+                        </ul>
+                        <div class="project-pricing">From RM325,000</div>
+                        <div class="project-cta" onclick="openModal()">View Details</div>
+                    </div>
+                </div>
+
+                <!-- ZUHRA HOTEL -->
+                <div class="project-item reveal">
+                    <div class="project-image" style="background-image: url('https://i.imgur.com/ZOCk2Wt.jpg');">
+                        <div class="project-label">Hospitality</div>
+                    </div>
+                    <div class="project-details">
+                        <h3 class="project-title">ZUHRA HOTEL</h3>
+                        <p class="project-location">📍 Sibu, Sarawak</p>
+                        <ul class="project-features">
+                            <li>Boutique Hotel</li>
+                            <li>Modern Hospitality Excellence</li>
+                            <li>Strategic Business Location</li>
+                            <li>Contemporary Guest Rooms</li>
+                            <li>Full Hotel Amenities & Services</li>
+                            <li>Professional Management</li>
+                        </ul>
+                        <div class="project-pricing">Hospitality Project</div>
+                        <div class="project-cta">Operational & Welcoming Guests</div>
+                    </div>
+                </div>
+
+                <!-- ZAYDA VISTA -->
+                <div class="project-item reveal">
+                    <div class="project-image" style="background-image: url('https://i.imgur.com/Y5jkU86.jpg');">
+                        <div class="project-label">Success Development</div>
+                    </div>
+                    <div class="project-details">
+                        <h3 class="project-title">ZAYDA VISTA</h3>
+                        <p class="project-location">📍 Petrajaya, Kuching</p>
+                        <ul class="project-features">
+                            <li>Premium Terrace Double Storey</li>
+                            <li>Strategic Prime Location</li>
+                            <li>Land Size: 4.49 pt (182 sq m)</li>
+                            <li>Modern Contemporary Design</li>
+                            <li>Bank Loan Approved</li>
+                            <li>Quality Finishes Throughout</li>
+                        </ul>
+                        <div class="project-pricing">From RM500,000</div>
+                        <div class="project-cta">Successfully Completed</div>
+                    </div>
+                </div>
+
+                <!-- SPEKTRA HOUSE -->
+                <div class="project-item reveal">
+                    <div class="project-image" style="background-image: url('https://i.imgur.com/mxEzyi9.jpg');">
+                        <div class="project-label">Current Development</div>
+                    </div>
+                    <div class="project-details">
+                        <h3 class="project-title">Spektra House</h3>
+                        <p class="project-location">📍 Sibu, Sarawak</p>
+                        <ul class="project-features">
+                            <li>Quality Residential Development</li>
+                            <li>Modern Architectural Design</li>
+                            <li>Prime Strategic Location</li>
+                            <li>Successfully Completed</li>
+                            <li>Satisfied Homeowners</li>
+                        </ul>
+                        <div class="project-cta">Under Construction</div>
+                    </div>
+                </div>
+
+                <!-- WHE BUILDING -->
+                <div class="project-item reveal">
+                    <div class="project-image" style="background-image: url('https://i.imgur.com/OSTrsec.jpg');">
+                        <div class="project-label">Current Development</div>
+                    </div>
+                    <div class="project-details">
+                        <h3 class="project-title">WHE Building</h3>
+                        <p class="project-location">📍 Jalan Kampung Datu, Sibu</p>
+                        <ul class="project-features">
+                            <li>Modern Commercial Shoplots</li>
+                            <li>Strategic Business Location</li>
+                            <li>Contemporary Facilities</li>
+                            <li>Flexible Rental Terms</li>
+                            <li>Ideal for Various Business</li>
+                        </ul>
+                        <div style="margin-top: 2rem;">
+                            <a href="tel:+60146812595" class="btn btn-gold" style="text-decoration: none;"><span>Inquire Now</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">What We Do</span>
+                <h2 class="section-title">Our Services</h2>
+                <div class="ornament"></div>
+                <p class="section-desc">Comprehensive Property Solutions Tailored to Your Needs</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card reveal">
+                    <div class="service-icon">🏗️</div>
+                    <h3 class="service-name">Property Development</h3>
+                    <p class="service-desc">Expert residential and commercial property development with unwavering focus on quality, strategic location, and exceptional value.</p>
+                </div>
+
+                <div class="service-card reveal">
+                    <div class="service-icon">💼</div>
+                    <h3 class="service-name">Sales & Marketing</h3>
+                    <p class="service-desc">Professional property sales and marketing services with transparent pricing and excellent customer service.</p>
+                </div>
+
+                <div class="service-card reveal">
+                    <div class="service-icon">🔑</div>
+                    <h3 class="service-name">Property Leasing</h3>
+                    <p class="service-desc">Premium commercial property leasing solutions for businesses. Prime locations with flexible terms.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Get In Touch</span>
+                <h2 class="section-title">Contact Us</h2>
+                <div class="ornament"></div>
+                <p class="section-desc">Let's Discuss Your Property Dreams</p>
+            </div>
+
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>Reach Out</h3>
+
+                    <div class="contact-detail reveal">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-text">
+                            <h4>Office Address</h4>
+                            <p>No.103, Jalan Kampung Nyabor<br>96000 Sibu, Sarawak<br>Malaysia</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail reveal">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-text">
+                            <h4>Phone / WhatsApp</h4>
+                            <p>+60 14-681 2595<br>014-681 2595</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail reveal">
+                        <div class="contact-icon">⏰</div>
+                        <div class="contact-text">
+                            <h4>Business Hours</h4>
+                            <p>Monday - Friday: 10:00 AM - 5:00 PM<br>Saturday & Sunday: Closed<br>(Open for Appointments Only)</p>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 3rem;" class="reveal">
+                        <a href="https://wa.me/60146812595" target="_blank" class="btn btn-gold" style="width: 100%; text-align: center; display: block; text-decoration: none;"><span>WhatsApp Us Now</span></a>
+                    </div>
+                </div>
+
+                <div class="contact-form-box reveal">
+                    <h3>Send Message</h3>
+                    <form action="https://formspree.io/f/xqajpyvj" method="POST">
+                        <div class="form-row">
+                            <label>Your Name</label>
+                            <input type="text" name="name" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="form-row">
+                            <label>Phone Number</label>
+                            <input type="tel" name="phone" placeholder="Enter your phone number" required>
+                        </div>
+                        <div class="form-row">
+                            <label>Email Address</label>
+                            <input type="email" name="_replyto" placeholder="Enter your email address" required>
+                        </div>
+                        <div class="form-row">
+                            <label>Interested In</label>
+                            <input type="text" name="interest" placeholder="e.g., Kemuyang Avenue Phase 5" required>
+                        </div>
+                        <div class="form-row">
+                            <label>Your Message</label>
+                            <textarea name="message" placeholder="Tell us about your requirements..." required></textarea>
+                        </div>
+                        <input type="hidden" name="_subject" value="New Contact - WHE Group Website">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="text" name="_gotcha" style="display:none">
+                        <button type="submit" class="form-submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KEMUYANG AVENUE PHASE 5 MODAL -->
+    <div id="kemuyangModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            
+            <div class="modal-header">
+                <h2>Kemuyang Avenue Phase 5</h2>
+                <p>📍 Sibu, Sarawak | Home of Harmony Community</p>
+            </div>
+
+            <div class="modal-body">
+                <!-- Image Gallery -->
+                <div class="modal-gallery">
+                    <img src="https://i.imgur.com/3T0LoSz.jpg" alt="Kemuyang Avenue Single Storey">
+                    <img src="https://i.imgur.com/DiR0EMQ.jpg" alt="Kemuyang Avenue Double Storey">
+                </div>
+
+                <!-- Price Range -->
+                <div class="price-section">
+                    <h3>RM325,000 - RM430,000</h3>
+                    <p>32 Units Available | Single & Double Storey Options</p>
+                </div>
+
+                <!-- House Types -->
+                <div class="house-types">
+                    <!-- Single Storey -->
+                    <div class="house-type-card">
+                        <h4>Single Storey Terrace</h4>
+                        <div class="specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Bedrooms:</span>
+                                <span class="spec-value">3</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Bathrooms:</span>
+                                <span class="spec-value">2</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Land Size (Intermediate):</span>
+                                <span class="spec-value">From 1,679 sq.ft</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Land Size (Corner):</span>
+                                <span class="spec-value">From 2,935 sq.ft</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Built-Up Area:</span>
+                                <span class="spec-value">From 964 sq.ft</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Price (Intermediate):</span>
+                                <span class="spec-value">From RM325,000</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Price (Corner):</span>
+                                <span class="spec-value">From RM350,000</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Units Available:</span>
+                                <span class="spec-value">10 Units</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Double Storey -->
+                    <div class="house-type-card">
+                        <h4>Double Storey Terrace</h4>
+                        <div class="specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Bedrooms:</span>
+                                <span class="spec-value">3</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Bathrooms:</span>
+                                <span class="spec-value">3</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Type A Built-Up:</span>
+                                <span class="spec-value">From 1,021 sq.ft</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Type B Built-Up:</span>
+                                <span class="spec-value">From 1,048 sq.ft</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Price Type A:</span>
+                                <span class="spec-value">From RM375,000</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Price Type B:</span>
+                                <span class="spec-value">From RM395,000</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Units Available:</span>
+                                <span class="spec-value">22 Units</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Key Features -->
+                <div class="features-section">
+                    <h3>Key Features & Benefits</h3>
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <div class="icon">🏡</div>
+                            <h5>Modern Design</h5>
+                            <p>Contemporary architecture</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="icon">✨</div>
+                            <h5>Connected Living</h5>
+                            <p>Open concept areas</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="icon">🚗</div>
+                            <h5>Car Porch</h5>
+                            <p>Covered parking</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="icon">💰</div>
+                            <h5>Early Bird Pricing</h5>
+                            <p>Special launch prices</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="icon">📄</div>
+                            <h5>SPA Paid</h5>
+                            <p>Legal fees covered</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="icon">🏦</div>
+                            <h5>Full Loan Available</h5>
+                            <p>T&C apply</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Specifications -->
+                <div class="specifications">
+                    <h3>Complete Specifications</h3>
+                    
+                    <div class="spec-category">
+                        <h4>Structure & Build</h4>
+                        <ul>
+                            <li>Reinforced Concrete Frameworks</li>
+                            <li>Internal & External Red Earthen Bricks</li>
+                            <li>0.42mm TCT thick colourbond roofing</li>
+                        </ul>
+                    </div>
+
+                    <div class="spec-category">
+                        <h4>Doors & Windows</h4>
+                        <ul>
+                            <li>H.W frame plywood flushed doors</li>
+                            <li>Aluminium frame sliding glass windows</li>
+                            <li>PVC flushed doors for bathrooms</li>
+                        </ul>
+                    </div>
+
+                    <div class="spec-category">
+                        <h4>Finishes</h4>
+                        <ul>
+                            <li>Weatherbound for exterior walls</li>
+                            <li>Ceramic floor tiles throughout</li>
+                            <li>Gypsum plaster ceiling</li>
+                            <li>1800mm Chain link fencing</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Location -->
+                <div class="features-section">
+                    <h3>Prime Location</h3>
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <div class="icon">✈️</div>
+                            <h5>14 KM</h5>
+                            <p>Sibu Airport</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="icon">🏥</div>
+                            <h5>13 KM</h5>
+                            <p>Sibu Hospital</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="icon">🛍️</div>
+                            <h5>17 KM</h5>
+                            <p>Star Megamall</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="modal-cta">
+                    <a href="https://wa.me/60146812595?text=Hi!%20I'm%20interested%20in%20Kemuyang%20Avenue%20Phase%205" target="_blank" class="btn btn-gold" style="text-decoration: none;">
+                        <span>WhatsApp Us Now</span>
+                    </a>
+                    <a href="tel:+60146812595" class="btn btn-outline" style="text-decoration: none;">
+                        <span>Call: 014-681 2595</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <img src="https://i.imgur.com/znXpPMl.png" alt="WHE Group" class="footer-logo">
+            <p class="footer-text">
+                WHE Group - Transforming Spaces, Inspiring Lives<br>
+                Premier Property Development Company in Sarawak
+            </p>
+            <div class="social-links">
+                <a href="#">📘</a>
+                <a href="#">📷</a>
+                <a href="https://wa.me/60146812595" target="_blank">💬</a>
+            </div>
+            <div class="footer-copy">
+                <p>&copy; 2024 WHE Group. All Rights Reserved.</p>
+                <p style="margin-top: 0.8rem;">Registered Office: No.103, Jalan Kampung Nyabor, 96000 Sibu, Sarawak</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Tawk.to Live Chat Widget -->
+    <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+            s1.async=true;
+            s1.src='https://embed.tawk.to/692142569bd603195c346825/1jakum9gj';
+            s1.charset='UTF-8';
+            s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
+        })();
+    </script>
+
+    <script>
+        // PAGE LOADER
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                document.querySelector('.page-loader').classList.add('loaded');
+            }, 2000);
+        });
+
+        // NAVBAR SCROLL
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // SMOOTH SCROLL
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // REVEAL ANIMATIONS
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // ANIMATED COUNTERS
+        function animateCounter(element, target, suffix = '') {
+            let current = 0;
+            const increment = target / 100;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target + suffix;
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.ceil(current) + suffix;
+                }
+            }, 20);
+        }
+
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNumbers = entry.target.querySelectorAll('.stat-number');
+                    statNumbers.forEach(stat => {
+                        const text = stat.textContent;
+                        const hasPlus = text.includes('+');
+                        const hasPercent = text.includes('%');
+                        const number = parseInt(text.replace(/[^0-9]/g, ''));
+                        stat.textContent = '0';
+                        
+                        setTimeout(() => {
+                            animateCounter(stat, number, hasPlus ? '+' : hasPercent ? '%' : '');
+                        }, 200);
+                    });
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const statsSection = document.querySelector('.stats');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+
+        // MODAL FUNCTIONS
+        function openModal() {
+            document.getElementById('kemuyangModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('kemuyangModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('kemuyangModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        // Close modal with ESC key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
