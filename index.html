@@ -169,7 +169,7 @@
             50% { text-shadow: 0 0 40px rgba(212, 175, 55, 1); opacity: 1; }
         }
 
-        /* NAVBAR - MINIMAL LUXURY DESIGN - OPTION C */
+        /* NAVBAR */
         .navbar {
             position: fixed;
             top: 0;
@@ -182,7 +182,6 @@
             box-shadow: 0 10px 50px rgba(0, 0, 0, 0.9);
         }
 
-        /* Top Gold Border */
         .navbar::before {
             content: '';
             position: absolute;
@@ -194,7 +193,6 @@
             box-shadow: 0 0 20px var(--gold);
         }
 
-        /* Bottom Gold Border */
         .navbar::after {
             content: '';
             position: absolute;
@@ -226,14 +224,12 @@
             position: relative;
         }
 
-        /* Logo Section - Left Side */
         .nav-logo {
             position: relative;
             z-index: 2;
             flex-shrink: 0;
         }
 
-        /* Subtle glow around logo */
         .nav-logo::before {
             content: '';
             position: absolute;
@@ -269,12 +265,6 @@
             height: 55px;
         }
 
-        /* Ornamental Divider - Hidden in this design */
-        .nav-ornament {
-            display: none;
-        }
-
-        /* Menu Section - Right Side */
         .nav-menu {
             display: flex;
             list-style: none;
@@ -289,7 +279,6 @@
             padding: 0 1.2rem;
         }
 
-        /* Elegant Dot Separators */
         .nav-menu li:not(:last-child)::after {
             content: '·';
             position: absolute;
@@ -321,7 +310,6 @@
             font-family: 'Montserrat', sans-serif;
         }
 
-        /* Minimal underline effect */
         .nav-menu a::before {
             content: '';
             position: absolute;
@@ -334,7 +322,6 @@
             box-shadow: 0 0 10px var(--gold);
         }
 
-        /* Top accent line */
         .nav-menu a::after {
             content: '';
             position: absolute;
@@ -359,7 +346,6 @@
             width: 100%;
         }
 
-        /* Subtle background glow on hover */
         .nav-menu li::before {
             content: '';
             position: absolute;
@@ -433,7 +419,7 @@
 
         .hero-title {
             font-family: 'Cinzel', serif;
-            font-size: clamp(3rem, 7vw, 7rem);
+            font-size: clamp(2rem, 4vw, 4.5rem);
             font-weight: 800;
             letter-spacing: 12px;
             margin-bottom: 1rem;
@@ -444,7 +430,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            animation: fadeInUp 1s ease 0.6s forwards, textShimmer 3s ease-in-out infinite;
+            animation: fadeInUp 1s ease 0.6s forwards, textShimmer 6s ease-in-out infinite;
         }
 
         @keyframes textShimmer {
@@ -900,7 +886,7 @@
             font-weight: 600;
         }
 
-        /* PROJECTS */
+        /* PROJECTS - NEW LAYOUT */
         .projects {
             background: var(--dark);
         }
@@ -914,6 +900,7 @@
             border: 1px solid rgba(212, 175, 55, 0.1);
             overflow: hidden;
             transition: all 0.4s;
+            min-height: 650px;
         }
 
         .project-item:hover {
@@ -931,7 +918,8 @@
         }
 
         .project-image {
-            height: 500px;
+            height: 100%;
+            min-height: 650px;
             background-size: cover;
             background-position: center;
             position: relative;
@@ -945,7 +933,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(135deg, rgba(10, 10, 10, 0.5), transparent);
+            background: linear-gradient(135deg, rgba(10, 10, 10, 0.3), transparent);
             transition: all 0.4s;
         }
 
@@ -956,7 +944,7 @@
         .project-label {
             position: absolute;
             top: 30px;
-            left: 30px;
+            right: 30px;
             background: var(--gold);
             color: var(--dark);
             padding: 12px 30px;
@@ -969,10 +957,20 @@
         }
 
         .project-details {
-            padding: 5rem;
+            padding: 5rem 4rem;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
+        }
+
+        /* NEW: Project Number Label */
+        .project-number {
+            font-size: 0.65rem;
+            color: var(--gold);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            font-weight: 300;
         }
 
         .project-title {
@@ -981,69 +979,75 @@
             color: var(--white);
             margin-bottom: 1rem;
             font-weight: 700;
+            line-height: 1.2;
         }
 
         .project-location {
-            color: var(--gold);
-            margin-bottom: 2rem;
-            font-weight: 600;
-            font-size: 1rem;
+            color: var(--gray-light);
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+            font-size: 0.95rem;
         }
 
         .project-intro {
             color: var(--gray-light);
-            font-style: italic;
-            margin-bottom: 2.5rem;
+            margin-bottom: 3rem;
             line-height: 1.8;
+            font-size: 0.95rem;
         }
 
-        .project-features {
-            list-style: none;
+        /* NEW: 2x2 Info Grid */
+        .project-info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
             margin-bottom: 3rem;
         }
 
-        .project-features li {
-            padding: 1rem 0;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
-            color: var(--gray-light);
+        .project-info-box {
+            background: rgba(26, 26, 26, 0.8);
+            border-left: 3px solid var(--gold);
+            padding: 2rem 1.5rem;
             transition: all 0.3s;
         }
 
-        .project-features li:hover {
-            padding-left: 15px;
-            color: var(--gold);
+        .project-info-box:hover {
+            background: rgba(26, 26, 26, 1);
+            border-left-width: 5px;
+            transform: translateX(5px);
         }
 
-        .project-features li::before {
-            content: '◆';
-            color: var(--gold);
-            margin-right: 15px;
-            font-size: 0.6em;
+        .project-info-label {
+            font-size: 0.65rem;
+            color: var(--gray);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            font-weight: 600;
         }
 
-        .project-pricing {
+        .project-info-value {
             font-family: 'Cinzel', serif;
-            font-size: 2.5rem;
-            background: linear-gradient(135deg, var(--gold), var(--gold-light));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-size: 2rem;
+            color: var(--gold);
             font-weight: 700;
-            margin-bottom: 2rem;
+            line-height: 1.2;
         }
 
         .project-cta {
             padding: 18px 40px;
             text-align: center;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: 700;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             text-transform: uppercase;
             border: 2px solid var(--gold);
             color: var(--gold);
             transition: all 0.3s;
             display: inline-block;
             cursor: pointer;
+            background: transparent;
+            width: fit-content;
         }
 
         .project-cta:hover {
@@ -1634,6 +1638,10 @@
                 flex-direction: column;
                 gap: 1rem;
             }
+
+            .project-info-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -1644,15 +1652,13 @@
         <div class="loader-text">Loading Excellence</div>
     </div>
 
-    <!-- NAVBAR - MINIMAL LUXURY -->
+    <!-- NAVBAR -->
     <nav class="navbar" id="navbar">
         <div class="nav-content">
-            <!-- Logo Left Side -->
             <div class="nav-logo">
                 <img src="https://i.imgur.com/znXpPMl.png" alt="WHE Group">
             </div>
             
-            <!-- Menu Right Side -->
             <ul class="nav-menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -1743,13 +1749,11 @@
                 </div>
 
                 <div class="reveal">
-                    <!-- BOARD OF DIRECTORS HEADER -->
                     <div class="board-header">
                         <h2>BOARD OF DIRECTORS</h2>
                         <p>Leadership Excellence</p>
                     </div>
 
-                    <!-- FOUNDER & CEO -->
                     <div class="director-card">
                         <div class="director-img">
                             <img src="https://i.imgur.com/Mw05aao.jpg" alt="Founder & CEO">
@@ -1763,7 +1767,6 @@
                         </div>
                     </div>
 
-                    <!-- MANAGING DIRECTOR -->
                     <div class="director-card">
                         <div class="director-img">
                             <img src="https://i.imgur.com/s84lMMM.jpg" alt="Managing Director">
@@ -1800,7 +1803,7 @@
         </div>
     </section>
 
-    <!-- PROJECTS -->
+    <!-- PROJECTS - NEW LAYOUT MATCHING SCREENSHOT -->
     <section class="projects" id="projects">
         <div class="container">
             <div class="section-header reveal">
@@ -1811,109 +1814,137 @@
             </div>
 
             <div class="projects-showcase">
-                <!-- KEMUYANG AVENUE PHASE 5 -->
+                <!-- KEMUYANG AVENUE PHASE 5 - NEW LAYOUT -->
                 <div class="project-item reveal">
                     <div class="project-image" style="background-image: url('https://i.imgur.com/sz2n4Jl.jpg');">
-                        <div class="project-label">Upcoming Development - Open for Booking</div>
+                        <div class="project-label">INVESTMENT OPPORTUNITY</div>
                     </div>
                     <div class="project-details">
+                        <div class="project-number">PROJECT 01</div>
                         <h3 class="project-title">Kemuyang Avenue Phase 5</h3>
                         <p class="project-location">📍 Sibu, Sarawak</p>
-                        <p class="project-intro">Modern homes surrounded by greenery, designed for comfort, style and harmony.</p>
-                        <ul class="project-features">
-                            <li>15 mins to Sibu Airport</li>
-                            <li>13 mins to Sibu General Hospital</li>
-                            <li>20 mins to Star Mega Mall</li>
-                            <li>30 mins to City Centre</li>
-                            <li>Early Bird Special Launch Price</li>
-                            <li>SPA Paid by Developer</li>
-                            <li>Free Loan Eligibility Check</li>
-                            <li>Full Loan Available (T&C Apply)</li>
-                        </ul>
-                        <div class="project-pricing">From RM325,000</div>
-                        <div class="project-cta" onclick="openModal()">View Details</div>
+                        <p class="project-intro">Premium residential development offering modern homes in a harmonious community setting. Strategic location with exceptional connectivity and growth potential.</p>
+                        
+                        <div class="project-info-grid">
+                            <div class="project-info-box">
+                                <div class="project-info-label">STARTING FROM</div>
+                                <div class="project-info-value">RM325K</div>
+                            </div>
+                            <div class="project-info-box">
+                                <div class="project-info-label">UNITS AVAILABLE</div>
+                                <div class="project-info-value">32</div>
+                            </div>
+                            <div class="project-info-box">
+                                <div class="project-info-label">COMPLETION</div>
+                                <div class="project-info-value">2029</div>
+                            </div>
+                            <div class="project-info-box">
+                                <div class="project-info-label">TYPE</div>
+                                <div class="project-info-value">Terrace</div>
+                            </div>
+                        </div>
+                        
+                        <div class="project-cta" onclick="openModal()">VIEW DETAILS →</div>
                     </div>
                 </div>
 
                 <!-- ZUHRA HOTEL -->
                 <div class="project-item reveal">
                     <div class="project-image" style="background-image: url('https://i.imgur.com/ZOCk2Wt.jpg');">
-                        <div class="project-label">Hospitality</div>
+                        <div class="project-label">HOSPITALITY</div>
                     </div>
                     <div class="project-details">
+                        <div class="project-number">PROJECT 02</div>
                         <h3 class="project-title">ZUHRA HOTEL</h3>
                         <p class="project-location">📍 Sibu, Sarawak</p>
-                        <ul class="project-features">
-                            <li>Boutique Hotel</li>
-                            <li>Modern Hospitality Excellence</li>
-                            <li>Strategic Business Location</li>
-                            <li>Contemporary Guest Rooms</li>
-                            <li>Full Hotel Amenities & Services</li>
-                            <li>Professional Management</li>
-                        </ul>
-                        <div class="project-pricing">Hospitality Project</div>
-                        <div class="project-cta">Operational & Welcoming Guests</div>
+                        <p class="project-intro">Boutique hospitality development delivering modern comfort and strategic business location advantages in Sibu's growing commercial district.</p>
+                        
+                        <div class="project-info-grid">
+                            <div class="project-info-box">
+                                <div class="project-info-label">CATEGORY</div>
+                                <div class="project-info-value">Hotel</div>
+                            </div>
+                            <div class="project-info-box">
+                                <div class="project-info-label">STATUS</div>
+                                <div class="project-info-value">Operational</div>
+                            </div>
+                        </div>
+                        
+                        <a href="tel:+60146812595" class="project-cta" style="text-decoration: none;">CONTACT US →</a>
                     </div>
                 </div>
 
                 <!-- ZAYDA VISTA -->
                 <div class="project-item reveal">
                     <div class="project-image" style="background-image: url('https://i.imgur.com/Y5jkU86.jpg');">
-                        <div class="project-label">Success Development</div>
+                        <div class="project-label">COMPLETED</div>
                     </div>
                     <div class="project-details">
+                        <div class="project-number">PROJECT 03</div>
                         <h3 class="project-title">ZAYDA VISTA</h3>
                         <p class="project-location">📍 Petrajaya, Kuching</p>
-                        <ul class="project-features">
-                            <li>Premium Terrace Double Storey</li>
-                            <li>Strategic Prime Location</li>
-                            <li>Land Size: 4.49 pt (182 sq m)</li>
-                            <li>Modern Contemporary Design</li>
-                            <li>Bank Loan Approved</li>
-                            <li>Quality Finishes Throughout</li>
-                        </ul>
-                        <div class="project-pricing">From RM500,000</div>
-                        <div class="project-cta">Successfully Completed</div>
+                        <p class="project-intro">Premium double storey terrace development in Kuching's prestigious Petrajaya district. A testament to quality construction and design excellence.</p>
+                        
+                        <div class="project-info-grid">
+                            <div class="project-info-box">
+                                <div class="project-info-label">STARTING FROM</div>
+                                <div class="project-info-value">RM500K</div>
+                            </div>
+                            <div class="project-info-box">
+                                <div class="project-info-label">STATUS</div>
+                                <div class="project-info-value">Sold Out</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <!-- SPEKTRA HOUSE -->
                 <div class="project-item reveal">
                     <div class="project-image" style="background-image: url('https://i.imgur.com/mxEzyi9.jpg');">
-                        <div class="project-label">Current Development</div>
+                        <div class="project-label">IN PROGRESS</div>
                     </div>
                     <div class="project-details">
+                        <div class="project-number">PROJECT 04</div>
                         <h3 class="project-title">Spektra House</h3>
                         <p class="project-location">📍 Sibu, Sarawak</p>
-                        <ul class="project-features">
-                            <li>Quality Residential Development</li>
-                            <li>Modern Architectural Design</li>
-                            <li>Prime Strategic Location</li>
-                            <li>Successfully Completed</li>
-                            <li>Satisfied Homeowners</li>
-                        </ul>
-                        <div class="project-cta">Under Construction</div>
+                        <p class="project-intro">Contemporary residential development showcasing modern architectural design and quality construction in a prime Sibu location.</p>
+                        
+                        <div class="project-info-grid">
+                            <div class="project-info-box">
+                                <div class="project-info-label">TYPE</div>
+                                <div class="project-info-value">Residential</div>
+                            </div>
+                            <div class="project-info-box">
+                                <div class="project-info-label">STATUS</div>
+                                <div class="project-info-value">Progress</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <!-- WHE BUILDING -->
                 <div class="project-item reveal">
                     <div class="project-image" style="background-image: url('https://i.imgur.com/OSTrsec.jpg');">
-                        <div class="project-label">Current Development</div>
+                        <div class="project-label">COMMERCIAL</div>
                     </div>
                     <div class="project-details">
+                        <div class="project-number">PROJECT 05</div>
                         <h3 class="project-title">WHE Building</h3>
                         <p class="project-location">📍 Jalan Kampung Datu, Sibu</p>
-                        <ul class="project-features">
-                            <li>Modern Commercial Shoplots</li>
-                            <li>Strategic Business Location</li>
-                            <li>Contemporary Facilities</li>
-                            <li>Flexible Rental Terms</li>
-                            <li>Ideal for Various Business</li>
-                        </ul>
-                        <div style="margin-top: 2rem;">
-                            <a href="tel:+60146812595" class="btn btn-gold" style="text-decoration: none;"><span>Inquire Now</span></a>
+                        <p class="project-intro">Modern commercial shoplots in strategic business location, offering flexible spaces ideal for various business operations.</p>
+                        
+                        <div class="project-info-grid">
+                            <div class="project-info-box">
+                                <div class="project-info-label">TYPE</div>
+                                <div class="project-info-value">Commercial</div>
+                            </div>
+                            <div class="project-info-box">
+                                <div class="project-info-label">LEASING</div>
+                                <div class="project-info-value">Available</div>
+                            </div>
                         </div>
+                        
+                        <a href="tel:+60146812595" class="project-cta" style="text-decoration: none;">INQUIRE NOW →</a>
                     </div>
                 </div>
             </div>
@@ -2039,21 +2070,17 @@
             </div>
 
             <div class="modal-body">
-                <!-- Image Gallery -->
                 <div class="modal-gallery">
                     <img src="https://i.imgur.com/3T0LoSz.jpg" alt="Kemuyang Avenue Single Storey">
                     <img src="https://i.imgur.com/DiR0EMQ.jpg" alt="Kemuyang Avenue Double Storey">
                 </div>
 
-                <!-- Price Range -->
                 <div class="price-section">
                     <h3>RM325,000 - RM430,000</h3>
                     <p>32 Units Available | Single & Double Storey Options</p>
                 </div>
 
-                <!-- House Types -->
                 <div class="house-types">
-                    <!-- Single Storey -->
                     <div class="house-type-card">
                         <h4>Single Storey Terrace</h4>
                         <div class="specs">
@@ -2092,7 +2119,6 @@
                         </div>
                     </div>
 
-                    <!-- Double Storey -->
                     <div class="house-type-card">
                         <h4>Double Storey Terrace</h4>
                         <div class="specs">
@@ -2128,7 +2154,6 @@
                     </div>
                 </div>
 
-                <!-- Key Features -->
                 <div class="features-section">
                     <h3>Key Features & Benefits</h3>
                     <div class="features-grid">
@@ -2165,7 +2190,6 @@
                     </div>
                 </div>
 
-                <!-- Specifications -->
                 <div class="specifications">
                     <h3>Complete Specifications</h3>
                     
@@ -2198,7 +2222,6 @@
                     </div>
                 </div>
 
-                <!-- Location -->
                 <div class="features-section">
                     <h3>Prime Location</h3>
                     <div class="features-grid">
@@ -2220,7 +2243,6 @@
                     </div>
                 </div>
 
-                <!-- CTA -->
                 <div class="modal-cta">
                     <a href="https://wa.me/60146812595?text=Hi!%20I'm%20interested%20in%20Kemuyang%20Avenue%20Phase%205" target="_blank" class="btn btn-gold" style="text-decoration: none;">
                         <span>WhatsApp Us Now</span>
@@ -2357,7 +2379,6 @@
             document.body.style.overflow = 'auto';
         }
 
-        // Close modal when clicking outside
         window.onclick = function(event) {
             const modal = document.getElementById('kemuyangModal');
             if (event.target == modal) {
@@ -2365,7 +2386,6 @@
             }
         }
 
-        // Close modal with ESC key
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape') {
                 closeModal();
